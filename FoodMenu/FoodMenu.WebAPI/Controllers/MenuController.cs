@@ -47,14 +47,14 @@ namespace FoodMenu.WebAPI.Controllers
             return Ok(result);
         }
 
-        //// PUT: api/menus 
-        //[HttpGet]
-        //[Route("menus/getById")]
-        //public async Task<IActionResult> GetMenuById(int menuId)
-        //{
-        //    var result = await _menuService.FindOneAsync(menuId);
-        //    return Ok(result);
-        //}
+        // PUT: api/menus 
+        [HttpGet]
+        [Route("menus/getById")]
+        public async Task<IActionResult> GetMenuById(int menuId)
+        {
+            var result = await _menuService.FindOneAsync(menuId);
+            return Ok(result);
+        }
 
     }
 }

@@ -15,21 +15,10 @@ namespace Customers.WebAPI.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
-        private readonly IOrderService _orderService;
 
-        public CustomerController(ICustomerService customerService,IOrderService orderService)
+        public CustomerController(ICustomerService customerService)
         {
             _customerService = customerService;
-            _orderService = orderService;
-        }
-
-        // GET: api/customers
-        [HttpGet]
-        [Route("customers/getCustomerOrder")]
-        public async Task<IActionResult> GetCustomerOrder(int orderId)
-        {
-            var result = await _orderService.FindOneAsync(orderId);
-            return Ok(result);
         }
 
         // GET: api/customers
